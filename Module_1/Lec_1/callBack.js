@@ -17,7 +17,7 @@ function fun(fullName, cb) {
 }
 
 fun("Steve Rogers", getFirstName);
-fun("Iron Man", getLastName);
+// fun("Iron Man", getLastName);
 
 // fun => hof
 // gFN , gLN => callback functions

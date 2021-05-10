@@ -3,10 +3,11 @@ let fs = require("fs");
 let extensionsMapping = require("./util.js");
 
 let testFolderPath = "./Downloads";
+
 let allFiles = fs.readdirSync(testFolderPath);
 
 for (let i = 0; i < allFiles.length; i++) {
-    sortFile(allFiles[i]);
+  sortFile(allFiles[i]);
 }
 
 function sortFile(file) {
@@ -17,8 +18,8 @@ function sortFile(file) {
 }
 
 function getExtension(file) {
-    file = file.split(".");
-    return file[1];
+  file = file.split(".");
+  return file[1];
 }
 function checkExtensionFolder(extension) {
   // extension = "doc";

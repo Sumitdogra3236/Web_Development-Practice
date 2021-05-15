@@ -46,3 +46,67 @@ function applySFlag(data) {
 
 // let removedSpacesString = applySFlag(f1KaData);
 // console.log(removedSpacesString);
+
+// -b flag => add line number to non empty lines
+function applyBFlag(data) {
+  let count = 1;
+  let splittedData = data.split("\r\n");
+  for (let i = 0; i < splittedData.length; i++) {
+    if (splittedData[i] != "") {
+      splittedData[i] = `${count}. ${splittedData[i]}`;
+      // splittedData[i] = count+". "+splittedData[i];
+      count++;
+    }
+  }
+  // console.log(splittedData);
+  let bFlaggedString = splittedData.join("\n");
+  return bFlaggedString;
+}
+let bFlaggedString = applyBFlag(f1KaData);
+console.log(bFlaggedString);
+
+// -n flag
+function applyNFlag(data) {
+  let count = 1;
+  let splittedData = data.split("\r\n");
+  for (let i = 0; i < splittedData.length; i++) {
+    splittedData[i] = `${count}. ${splittedData[i]}`;
+    count++;
+  }
+  // console.log(splittedData);
+  let nFlaggedString = splittedData.join("\n");
+  return nFlaggedString;
+}
+console.log(applyNFlag(f1KaData));
+
+// // let removedSpacesString = applySFlag(f1KaData);
+// // console.log(removedSpacesString);
+
+// function applyBFlag(data){
+// let splittedData = data.split('\r\n');
+// let count = 1;
+// for(let i=0;i<splittedData.length;i++){
+//   if(splittedData[i]!==''){
+//     splittedData[i] = `${count}. ${splittedData[i]}`;
+//     count++;
+//   }
+// }
+// let BFlagData = splittedData.join('\n');
+// return BFlagData;
+
+// }
+
+// // console.log(applyBFlag(f1KaData));
+
+// function applyNFlag(data){
+//   splittedData = data.split('\n\r');
+//   let count = 1;
+//   for(let i=0;i<splittedData.length;i++){
+//     splittedData[i] = `${count}. ${splittedData[i]}`;
+//     count++;
+//   }
+//   let NFalgData = splittedData.join('\n');
+//   return NFalgData;
+// }
+
+// console.log(applyNFlag(f1KaData));

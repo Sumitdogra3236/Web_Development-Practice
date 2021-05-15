@@ -3,6 +3,7 @@ let fs = require("fs");
 let extensionsMapping = require("./util.js");
 
 let testFolderPath = "./Downloads";
+// let testFolderPath = "C:/Users/sumit/Desktop/Downloads";
 
 let allFiles = fs.readdirSync(testFolderPath);
 

@@ -25,4 +25,21 @@ let ptagData = myDocument("p").text();
 
 
 //Selectors
-console.log(myDocument("ul p").text()); // it will give all the p tags inside ul
+// console.log(myDocument("ul p").text()); // it will give all the p tags inside ul
+
+
+// console.log(myDocument("a").text());
+// console.log(myDocument("ul li a").text()); // - we will get all  a tags inside li
+
+//only direct child!!
+// console.log(myDocument("ul>a").text());
+
+
+//classes and ids
+// for classes => use dot .
+// console.log(myDocument(".inside").text());
+
+// console.log(myDocument(".inside.main").text());
+
+// for id use => # 
+console.log(myDocument("#main-heading").text());

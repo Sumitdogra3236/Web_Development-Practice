@@ -18,13 +18,13 @@ function cb(error, response, data) {
 // fs.writeFileSync('./bowlingTables.html', bothBowlingTables+"");
 
 function getHighestWicketTaker(data) {
-    let htmlData = fs.readFileSync("./match.html", "utf-8");
-    let myDocument = cheerio.load(htmlData);
-    let bothBowlingTables = myDocument(".table.bowler");
-    let highestWicketTakerName;
-    let highestWicketTaken;
-    
-    let economyofHighestWicketTaker;
+  let htmlData = fs.readFileSync("./match.html", "utf-8");
+  let myDocument = cheerio.load(htmlData);
+  let bothBowlingTables = myDocument(".table.bowler");
+  let highestWicketTakerName;
+  let highestWicketTaken;
+
+  let economyofHighestWicketTaker;
 
   for (let i = 0; i < bothBowlingTables.length; i++) {
     let bowlingTable = myDocument(bothBowlingTables[i]);
@@ -40,14 +40,8 @@ function getHighestWicketTaker(data) {
       } else {
         let currentWickets = myDocument(allTds[4]).text();
         let currentEconomy = myDocument(allTds[5]).text;
-        if (currentWickets > highestWicketTaken) {
-          highestWicketTakerName = myDocument(allTds[0]).find("a").text();
-          highestWicketTaken = myDocument(allTds[4]).text();
-          economyofHighestWicketTaker = myDocument(allTds[5]).text();
-        } else if (
-          currentWickets == highestWicketTaken &&
-          currentEconomy < economyofHighestWicketTaker
-        ) {
+       
+        if (currentWickets > highestWicketTaken || (currentWickets == highestWicketTaken &&currentEconomy < economyofHighestWicketTaker)) {
           highestWicketTakerName = myDocument(allTds[0]).find("a").text();
           highestWicketTaken = myDocument(allTds[4]).text();
           economyofHighestWicketTaker = myDocument(allTds[5]).text();

@@ -4,30 +4,38 @@ let request = require("request");
 let fs = require("fs");
 let cheerio = require("cheerio");
 
-// request(matchlink, cb);
+request(matchlink, cb);
 
-// function cb(error, response , data){
-//     fs.writeFileSync("data.html", data);
-// }
+function cb(error, response , data){
+    fs.writeFileSync("data.html", data);
+    getHighestWicketTaker(data);
+}
 
-let html = fs.readFileSync("./data.html", "utf-8");
 
-let data = cheerio.load(html);
+
+// let html = fs.readFileSync("./data.html", "utf-8");
+
+// let data = cheerio.load(html);
  
-let bothbowlingTable = data(".table.bowler");
 // fs.writeFileSync("bowlingTable.html", bothbowlingTable+"");
 
 // {
-//     "0" : {bowling Table},
-//     "1" : {bowling Table}
-// }
+    //     "0" : {bowling Table},
+    //     "1" : {bowling Table}
+    // }
+    
+    function getHighestWicketTaker(data){
+        let html = fs.readFileSync("./data.html", "utf-8");
+        let ch = cheerio.load(html);
+        let bothbowlingTable = ch(".table.bowler");
 
-let highestWicketTakerName;
-let highestWicketTaken;
-let highestWicketTakerEconomy;
+
+    let highestWicketTakerName;
+    let highestWicketTaken;
+    let highestWicketTakerEconomy;
 
 for(let i = 0; i < bothbowlingTable.length; i++){
-    let bowlingTable = data(bothbowlingTable[i]);
+    let bowlingTable = ch(bothbowlingTable[i]);
 
     let allTableRows = bowlingTable.find(".table.bowler tbody tr");
 
@@ -38,21 +46,21 @@ for(let i = 0; i < bothbowlingTable.length; i++){
     // }
 
     for(let j = 0; j < allTableRows.length; j++){
-        let allTds = data(allTableRows[j]).find("td");
+        let allTds = ch(allTableRows[j]).find("td");
         // { 0 : {}, 1 : {}, 2 : {} }
 
         if(i == 0 && j == 0){
-            highestWicketTakerName = data(allTds[0]).find("a").text();
-            highestWicketTaken = data(allTds[4]).text();
-            highestWicketTakerEconomy = data(allTds[5]).text();
+            highestWicketTakerName = ch(allTds[0]).find("a").text();
+            highestWicketTaken = ch(allTds[4]).text();
+            highestWicketTakerEconomy = ch(allTds[5]).text();
         }
         else {
-            let currentWickets = data(allTds[4]).text();
+            let currentWickets = ch(allTds[4]).text();
             if(currentWickets > highestWicketTaken){
                 // update if current bowler have high wicket !!
-                highestWicketTakerName = data(allTds[0]).find("a").text();
-                highestWicketTaken = data(allTds[4]).text();
-                highestWicketTakerEconomy = data(allTds[5]).text();
+                highestWicketTakerName = ch(allTds[0]).find("a").text();
+                highestWicketTaken = ch(allTds[4]).text();
+                highestWicketTakerEconomy = ch(allTds[5]).text();
             }
         }
     }
@@ -66,3 +74,4 @@ for(let i = 0; i < bothbowlingTable.length; i++){
 console.log("Name : " + highestWicketTakerName);
 console.log("Wicket Taken  : " + highestWicketTaken);
 console.log("Economy of Highest Wicket Taker : " + highestWicketTakerEconomy);  
+}

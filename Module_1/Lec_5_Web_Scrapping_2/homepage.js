@@ -13,7 +13,6 @@ const getAllMatches = require("./allMatches");
     let myDocument = cheerio.load(data);
     let aTag = myDocument('a[data-hover="Fixtures and Results"]');
     let allMatchLink ="https://www.espncricinfo.com" + aTag["0"].attribs.href;
-    
     getAllMatches(allMatchLink);
  }
 

@@ -1,7 +1,6 @@
 const fs = require("fs");
 const Cheerio = require("cheerio");
 const request = require("request");
-const { create } = require("domain");
 
 
 // let matchLink = "https://www.espncricinfo.com/series/ipl-2020-21-1210595/delhi-capitals-vs-mumbai-indians-final-1237181/full-scorecard";
@@ -48,7 +47,7 @@ function processData(html){
     console.log("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
 }
 
-function processDetails(batsmanName, balls, runs, fours, sixes, StrikeRate){
+function processDetails(teamName, batsmanName, balls, runs, fours, sixes, StrikeRate){
 
     let isTeamFolder = checkTeamFolder(teamName);
     if(isTeamFolder){

@@ -6,7 +6,7 @@ const getMatchDetail = require("./match.js");
 function getAllMatches(allMatchLink){
     request(allMatchLink, function(err, res, data){
         processData(data);  
-    })
+    });
 }
 
 

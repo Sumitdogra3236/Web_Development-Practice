@@ -16,30 +16,31 @@ function getMatchDetail(matchLink){
 function processData(html){
     let myDocument = Cheerio.load(html);
     let bothInnings = myDocument(".card.content-block.match-scorecard-table .Collapsible");
-    for(let i=0;i<bothInnings.length; i++){
+    for(let i = 0; i < bothInnings.length; i++){
         let oneInning = myDocument(bothInnings[i]);
+
         let teamName = oneInning.find("h5").text();
         teamName = teamName.split("INNING")[0].trim();
         console.log(teamName);
 
         let allTrs = myDocument(oneInning).find(".table.batsman tbody tr");
-        for(let j = 0; j < allTrs.length-1; j++){
+        for(let j = 0; j < allTrs.length - 1; j++){
             let allTds = myDocument(allTrs[j]).find("td");
             if(allTds.length > 1){
               // batsman Name : allTds[0]
-              let batsmanName = myDocument(allTds[0]).text();
+              let batsmanName = myDocument(allTds[0]).text().trim();
 
               // runs : allTds[2]
-                let runs = myDocument(allTds[2]).text();
+                let runs = myDocument(allTds[2]).text().trim();
               //  Balls : allTds[3]
-                let balls = myDocument(allTds[3]).text();
+                let balls = myDocument(allTds[3]).text().trim();
               // fours : allTds[5]
-                let fours = myDocument(allTds[5]).text();
+                let fours = myDocument(allTds[5]).text().trim();
               // sixes : allTds[6]
-                let sixes = myDocument(allTds[6]).text();
+                let sixes = myDocument(allTds[6]).text().trim();
               // strike rate : allTds[7]
-              let StrikeRate = myDocument(allTds[7]).text();
-              console.log(`Name : ${batsmanName} Runs : ${runs} Balls : ${balls} Fours : ${fours} Sixes : ${sixes} Strike Rate ${StrikeRate}`);
+              let StrikeRate = myDocument(allTds[7]).text().trim();
+              // console.log(`Name : ${batsmanName} Runs : ${runs} Balls : ${balls} Fours : ${fours} Sixes : ${sixes} Strike Rate ${StrikeRate}`);
               processDetails(teamName, batsmanName, balls, runs, fours, sixes, StrikeRate);
             }
         } 
@@ -73,7 +74,7 @@ function checkTeamFolder(teamName){
 
 function checkBatsmanFile(teamName, batsmanName){
  //IPL/Delhi Capital/ Rishabh Pant.json
- let batsmanFilePath = `./IPL/${teamName}/${batsmanName}`;
+ let batsmanFilePath = `./IPL/${teamName}/${batsmanName}.json`;
  return fs.existsSync(batsmanFilePath); 
 }
 
@@ -88,7 +89,7 @@ let inning = {
     StrikeRate : StrikeRate
 }
 batsmanFile.push(inning);
-fs.writeFileSync(batsmanFile, JSON.stringify(batsmanFile));
+fs.writeFileSync(batsmanFilePath, JSON.stringify(batsmanFile));
 }
 
 function createBatsmanFile(teamName ,batsmanName, balls, runs, fours, sixes, StrikeRate){

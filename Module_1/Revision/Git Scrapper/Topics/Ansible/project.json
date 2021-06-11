@@ -1,0 +1,42 @@
+[
+    {
+        "ProjectName": "ansible",
+        "ProjectLink": "https://github.com/ansible/ansible"
+    },
+    {
+        "ProjectName": "streisand",
+        "ProjectLink": "https://github.com/StreisandEffect/streisand"
+    },
+    {
+        "ProjectName": "algo",
+        "ProjectLink": "https://github.com/trailofbits/algo"
+    },
+    {
+        "ProjectName": "kubespray",
+        "ProjectLink": "https://github.com/kubernetes-sigs/kubespray"
+    },
+    {
+        "ProjectName": "awx",
+        "ProjectLink": "https://github.com/ansible/awx"
+    },
+    {
+        "ProjectName": "devops-exercises",
+        "ProjectLink": "https://github.com/bregman-arie/devops-exercises"
+    },
+    {
+        "ProjectName": "kubeasz",
+        "ProjectLink": "https://github.com/easzlab/kubeasz"
+    },
+    {
+        "ProjectName": "ansible-for-devops",
+        "ProjectLink": "https://github.com/geerlingguy/ansible-for-devops"
+    },
+    {
+        "ProjectName": "rundeck",
+        "ProjectLink": "https://github.com/rundeck/rundeck"
+    },
+    {
+        "ProjectName": "semaphore",
+        "ProjectLink": "https://github.com/ansible-semaphore/semaphore"
+    }
+]

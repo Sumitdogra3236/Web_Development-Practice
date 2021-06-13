@@ -1,0 +1,42 @@
+[
+    {
+        "ProjectName": "ccxt",
+        "ProjectLink": "https://github.com/ccxt/ccxt"
+    },
+    {
+        "ProjectName": "hubot",
+        "ProjectLink": "https://github.com/hubotio/hubot"
+    },
+    {
+        "ProjectName": "python-telegram-bot",
+        "ProjectLink": "https://github.com/python-telegram-bot/python-telegram-bot"
+    },
+    {
+        "ProjectName": "InstaPy",
+        "ProjectLink": "https://github.com/timgrossmann/InstaPy"
+    },
+    {
+        "ProjectName": "discord.js",
+        "ProjectLink": "https://github.com/discordjs/discord.js"
+    },
+    {
+        "ProjectName": "rasa",
+        "ProjectLink": "https://github.com/RasaHQ/rasa"
+    },
+    {
+        "ProjectName": "ChatterBot",
+        "ProjectLink": "https://github.com/gunthercox/ChatterBot"
+    },
+    {
+        "ProjectName": "botkit",
+        "ProjectLink": "https://github.com/howdyai/botkit"
+    },
+    {
+        "ProjectName": "botpress",
+        "ProjectLink": "https://github.com/botpress/botpress"
+    },
+    {
+        "ProjectName": "EverydayWechat",
+        "ProjectLink": "https://github.com/sfyc23/EverydayWechat"
+    }
+]

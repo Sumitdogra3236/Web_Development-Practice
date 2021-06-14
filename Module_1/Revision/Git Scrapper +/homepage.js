@@ -5,7 +5,6 @@ const fs = require("fs");
 const request = require("request");
 let getTopicProjects = require("./getTopicProjects");
 
-// const getTopicProjects = require("./getTopicProjects");
 let link = "https://github.com/topics";
 
 request(link, function (err, res, data) {
@@ -24,9 +23,9 @@ function processData(html) {
     // topicName = topicName.trim().split("\n")[0];
     let topicName = topic.find(".f3").text().split("\n")[1].trim();
     let topicLink = "https://github.com" + myDocument(topic).attr("href");
-    // console.log(`Name : ${topicName} ${topicLink} `);
+    // console.log(`Name : ${topicName} Link : ${topicLink} `);
     let topicFolderPath = `./Topics/${topicName}`;
-    // fs.mkdirSync(topicFolderPath);
+    fs.mkdirSync(topicFolderPath);
 
     getTopicProjects(topicName, topicLink);
   }

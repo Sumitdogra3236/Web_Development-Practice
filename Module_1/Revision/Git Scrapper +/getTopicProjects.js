@@ -1,5 +1,6 @@
 const cheerio = require("cheerio");
 const fs = require("fs");
+const path = require("path");
 const request = require("request");
 
 function getTopicProjects(topicName, topicLink) {
@@ -17,12 +18,11 @@ function processData(topicName, data) {
     let ProjectName = myDocument(ProjectATag).text().split("\n")[1].trim();
     let ProjectLink = "https://github.com" + myDocument(ProjectATag).attr("href");
     // console.log(ProjectLink);
-    
-    process(ProjectName, ProjectLink);
+    process(topicName, ProjectName, ProjectLink);
   }
 }
 
-function process(ProjectName,ProjectLink){
+function process(topicName, ProjectName,ProjectLink){
     request(ProjectLink, function(err, res, data){
         getIssues(ProjectName,data);
         // console.log(data);
@@ -30,13 +30,14 @@ function process(ProjectName,ProjectLink){
 }
 
 function getIssues(ProjectName, data){
-    let myDocument = cheerio.load(data);
-    let issueLink = myDocument(".UnderlineNav-body.list-style-none .d-flex");
-    let issueTag = myDocument(issueLink).find("a")[1];
-    let link = "https://github.com" + myDocument(issueTag).attr("href");
-    // console.log(link);
-    Link(link);
-    
+  let myDocument = cheerio.load(data);
+  // let issueSelector = myDocument(".UnderlineNav-body.list-style-none .d-flex");
+  let issueSelector = myDocument(".UnderlineNav-body.list-style-none .UnderlineNav-item.hx_underlinenav-item.no-wrap.js-responsive-underlinenav-item");
+
+  let issueTag = myDocument(issueLink).find("a")[1];
+  let issuelink = "https://github.com" + myDocument(issueTag).attr("href");
+  // console.log(link);
+  Link(link);
 }
 
  function Link(link){

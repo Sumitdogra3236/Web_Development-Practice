@@ -22,6 +22,7 @@ function getMatchDetail(matchLink){
 
         if(countofRequests == 0){
           console.table(leaderboard);
+          console.log(typeof leaderboard);
         }
     })
 }

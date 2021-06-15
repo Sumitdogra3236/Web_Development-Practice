@@ -19,6 +19,8 @@
   "homepage": "https://github.com/Sumitdogra3236/Web_Development-Practice#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.9",
+    "express": "^4.17.1",
+    "json2xls": "^0.1.2",
     "request": "^2.88.2"
   }
 }

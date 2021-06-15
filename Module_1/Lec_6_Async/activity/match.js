@@ -22,6 +22,8 @@ function getMatchDetail(matchLink){
 
         if(countofRequests == 0){
           console.table(leaderboard);
+          // fs.writeFileSync('./LeaderBoard.json', JSON.stringify(leaderboard));
+          // fs.writeFile("./LeaderBoard.json", JSON.stringify(leaderboard), function(err, data){});
           console.log(typeof leaderboard);
         }
     })

@@ -4,7 +4,7 @@ function fun() {
   console.log("fun says Hi !!!!");
 }
 
-// function call / invoke
+// function call / invoke 
 // fun();
 
 // In js , a function acts like a variable

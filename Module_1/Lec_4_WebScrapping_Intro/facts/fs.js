@@ -1,4 +1,4 @@
-let fs = require("fs");
+let fs = require("fs"); 
 
 let cheerio = require("cheerio");
 
@@ -21,7 +21,6 @@ let ptagData = myDocument("p").text();
 // console.log(secondPTag);
 
 // console.log(myDocument(secondPTag).text());
-
 
 
 //Selectors

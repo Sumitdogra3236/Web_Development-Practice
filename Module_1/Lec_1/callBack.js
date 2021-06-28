@@ -1,3 +1,4 @@
+
 function getFirstName(fullName) {
   // fullname = "STEVE ROGERS" => string
   fullName = fullName.split(" ");

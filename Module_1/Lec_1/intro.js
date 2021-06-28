@@ -1,7 +1,7 @@
 console.log(`JAI SHREE RAM
             MANDIR WAHI BANEGA`);
 
-// Mandir Ban Gaya bs oxygen mt maango
+// Mandir Ban Gaya bs oxygen mt maango 
 
 // Data Types =>
 

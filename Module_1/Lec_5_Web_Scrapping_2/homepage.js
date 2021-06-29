@@ -16,6 +16,5 @@ const getAllMatches = require("./allMatches");
     getAllMatches(allMatchLink);
  }
 
-
 //  const a = require('./IPL/Chennai Super Kings/Ambati Rayudu.json');
 //  console.table(a);

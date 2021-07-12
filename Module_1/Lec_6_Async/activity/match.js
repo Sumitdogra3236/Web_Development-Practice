@@ -2,13 +2,11 @@ const fs = require("fs");
 const Cheerio = require("cheerio");
 const request = require("request");
 
-
 // let matchLink = "https://www.espncricinfo.com/series/ipl-2020-21-1210595/delhi-capitals-vs-mumbai-indians-final-1237181/full-scorecard";
 // getMatchDetail(matchLink);
 
 let leaderboard = []; 
 let countofRequests = 0;
-
 
 function getMatchDetail(matchLink){
     console.log("Sending request", countofRequests);

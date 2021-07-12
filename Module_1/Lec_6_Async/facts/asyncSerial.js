@@ -20,5 +20,4 @@ fs.readFile("./f1.txt", function (error, data) {
 
 
 
-
 console.log("End");

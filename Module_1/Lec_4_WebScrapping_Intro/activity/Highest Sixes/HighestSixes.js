@@ -42,5 +42,4 @@ function gethighestSixes(data){
     console.log("Highest Sixer Name = " + highestSixerName);
     console.log("Highest Sixes = " + highestSixes);
     console.log("Strike Rate = " + StrikeRate);
-
 }

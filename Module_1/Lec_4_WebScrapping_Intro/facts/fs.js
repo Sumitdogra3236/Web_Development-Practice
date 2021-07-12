@@ -12,7 +12,6 @@ let h1Data = myDocument("h1").text();
 // console.log(h1Data);
 // console.log(h2Data);
 
-
 let ptagData = myDocument("p").text();
 // console.log(ptagData);  
 //  let secondPTag = myDocument("p")[1];

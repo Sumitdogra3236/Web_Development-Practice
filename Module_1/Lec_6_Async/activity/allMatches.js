@@ -9,7 +9,6 @@ function getAllMatches(allMatchLink){
     });
 }
 
-
 function processData(data){
     let myDocument = cheerio.load(data);
     let allTags = myDocument('a[data-hover="Scorecard"]');

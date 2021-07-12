@@ -1,4 +1,3 @@
-
 // GEC -> Global Execution Context -> where js code runs in the stack
 // Node API -> Where the callBack functions executes
 // Waiting Queue -> CallBack function are pushed to Waiting queue after their execution(i.e. fetching of the data from the files), for the further operation in GEC

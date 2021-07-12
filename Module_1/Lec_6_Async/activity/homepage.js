@@ -5,7 +5,7 @@ const fs = require("fs");
 const request = require("request");
 
 const getAllMatches = require("./allMatches");
- request(MatchLink, function(err, req, data){
+request(MatchLink, function(err, req, data){
      processData(data);
  })
 

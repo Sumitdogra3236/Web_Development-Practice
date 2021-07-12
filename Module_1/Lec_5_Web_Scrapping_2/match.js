@@ -5,7 +5,6 @@ const request = require("request");
 // let matchLink = "https://www.espncricinfo.com/series/ipl-2020-21-1210595/delhi-capitals-vs-mumbai-indians-final-1237181/full-scorecard";
 // getMatchDetail(matchLink);
 
-
 function getMatchDetail(matchLink){
     request(matchLink, function(err, res, data){
         processData(data);

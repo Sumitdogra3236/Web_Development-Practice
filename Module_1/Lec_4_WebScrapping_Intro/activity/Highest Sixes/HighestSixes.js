@@ -2,7 +2,6 @@ let matchLink = "https://www.espncricinfo.com/series/ipl-2020-21-1210595/delhi-c
 const request = require("request");
 const cheerio = require("cheerio");
 const fs = require("fs");
-const { data } = require("cheerio/lib/api/attributes"); 
 
 request(matchLink, function (error, response, data){
     gethighestSixes(data);
